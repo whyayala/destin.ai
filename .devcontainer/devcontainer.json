@@ -1,7 +1,22 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "ghcr.io/goldsam/dev-container-features/aws-sam-cli:1": {},
-    "ghcr.io/devcontainers/features/rust:1": {}
-  }
+  "name": "Rust + AWS SAM CLI + Lambda",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": [
+    "--privileged",
+    "-v", "/var/run/docker.sock:/var/run/docker.sock"
+  ],
+  "mounts": [
+    "source=${localWorkspaceFolder}/.aws,target=/home/vscode/.aws,type=bind,consistency=cached"
+  ],
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": [
+    "rust-lang.rust-analyzer",
+    "amazonwebservices.aws-toolkit-vscode"
+  ],
+  "postCreateCommand": "cargo new rust-lambda && cd rust-lambda && cargo add lambda_runtime && cargo build",
+  "remoteUser": "vscode"
 }
