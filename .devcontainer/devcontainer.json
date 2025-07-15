@@ -1,7 +1,7 @@
 {
   "name": "Rust + AWS SAM CLI + Lambda",
   "build": {
-    "dockerfile": "Dockerfile"
+    "dockerfile": "Containerfile"
   },
   "runArgs": [
     "--privileged",
