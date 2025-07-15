@@ -1,0 +1,7 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/goldsam/dev-container-features/aws-sam-cli:latest": {},
+    "ghcr.io/devcontainers/features/rust:latest": {}
+  }
+}
